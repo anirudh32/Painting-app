@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Painting app</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="content">
+    <h1 ><i>Paint Your Own Picture</i></h1>
+<p>
+  Set Width
+  <input type = "text" id="w">
+  Set Height
+  <input type = "text" id="h">
+</p>
+<p>
+  <input type = "button" value="Make canvas" onclick = "setWidth(w.value);setHeight(h.value)"/>
+</p>
+<canvas id = "canvas1" onmousedown="startPaint()" onmousemove = "doPaint(event.offsetX,event.offsetY)" onmouseup="endPaint()">
+</canvas>
+<p>
+  Brush color:
+<input type = "color" value = "#000" 
+  onchange="setColor(this.value)" />
+  Brush size:
+<input type = "range" min ="1" max = "50" value="1" oninput="reSize(this.value)" />
+  <output id="sizeOutput">1</output>
+</p>
+<p>
+  <input type = "button" value = "Clear canvas"
+      onclick="clearCanvas()"/>
+</p>
+<script src="script.js"></script>
+    </div>
+</body>
+</html>
